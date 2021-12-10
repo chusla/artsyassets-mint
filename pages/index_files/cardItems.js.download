@@ -1,0 +1,21 @@
+const cardItems = Handlebars.compile(`{{#each items}}
+<a class='card-item' href="{{href}}" data-index="index-{{tokenId}}">
+  <div class='img'>
+    <img src="{{image}}" class='item' onerror="this.src='{{placeholder}}'">
+  </div>
+  <div class='col'>
+    <div class='header'>
+      <h3>#{{tokenId}}</h3>
+      <h2>{{name}}</h2>
+      <div class='description'>{{description}}</div>
+    </div>
+    <div class='attributes'>
+      <table class='table'>
+        {{#each attributes}}
+          <tr><td>{{trait_type}}</td><td>{{value}}</td></tr>
+        {{/each}}
+      </table>
+    </div>
+  </div>
+</a>
+{{/each}}`)

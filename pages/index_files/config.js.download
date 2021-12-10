@@ -1,0 +1,25 @@
+const Config = {
+//  factory_address: "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+//  factory_address: "0x0165878A594ca255338adfa4d48449f69242Eb8F"
+//  factory_address: "0xc6511457dB13d5Ff17b0fE096b699Ca39795eAC8",
+//  factory_address: "0x0a1EfbbF372Ba76cD273b5Fe6dCD3A4AaB5032d9",
+//  factory_address: "0x56Ad1cf66a75B55B921A59bD4D7e2dDba2fB6071",
+//  factory_address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+//  factory_address: "0x26B70dD60A0921C9FE92bEF80cd0eB2466748715",
+//  factory_address: "0x3F7938DfFd356c4Ea48BAe838A67D2d3eA74C08c",
+//  factory_address: "0x1df63623A7AcdF73235Fa0EE6Eb09A4718fF4223",
+//  factory_address: "0xe95FcD2e2514921147c78dFCeB04fC7E23292a03",
+//  factory_address: "0x7828b8DE5DB189EA372bDa8EFE19B1b8CB15c173",
+//  factory_address: "0x09F396f39DB8B84faaCb975A11Ce7B65Ea2A1aFC",
+//  factory_address: "0x7E7906A55092e19824Ef9603a61db038B0c5D274",
+//  factory_address: "0xE4F5766D5aBc6729E9E15b26eCE3B38885cDDcA5",
+//  factory_address: "0x748D4De49ced8bdF8A39F4e84Cb1F2A0c6D0Ae78",
+//  factory_address: "0x5a9520B12c5b84D3C05362B74684Ec02d2366BC7",
+//  factory_address: "0xf3Cb84E310D1c26E32c8c76542618d1e603f9827",
+//  factory_address: "0xB5B2D6BCbAE82D1f3D8541B579AA6A45491E9DD7",
+//  factory_address: "0x04d196bFa78a7A06135b40D0cd0375Ea04cA5d18",
+  //factory_address: "0x5E1606A3271Ed60A0291E9417041d70b683689f8",
+  factory_address: "0xB10ec2219DA68F3456a1A016f25abfB673A4E15E",
+  //network: "local"
+  network: "rinkeby"
+}

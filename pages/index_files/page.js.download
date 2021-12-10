@@ -1,0 +1,75 @@
+class Page {
+  constructor (o) {
+    this.options = o;
+    this.size = 100;
+
+    this.base = o.base
+    this.maxFn = o.max
+    this.filter = o.filter
+    this.template = o.template
+    this.el = document.querySelector(o.el)
+  }
+  reset() {
+    this.max = null;
+    this.el.innerHTML = ""
+  }
+  async get (page) {
+    if (typeof page !== "undefined") {
+      page = parseInt(page)
+    } else {
+      page = 0
+    }
+    console.log("P", page)
+    if (!this.max) {
+      this.max = await this.maxFn(this.options)
+    }
+    if (this.max === 0) {
+      this.el.innerHTML = ""
+      return
+    }
+    let start = this.size * page + 1
+    let end = Math.min(start + this.size-1, this.max) + 1;
+    console.log("start", start)
+    console.log("end", end)
+
+    try {
+      let items = await this.filter(start, end, this.options)
+      console.log("items length", items.length)
+      this.el.innerHTML = this.template({ items })
+    } catch (e) {
+      throw e
+    }
+    if (start > this.max) this.exhausted = true;
+
+    console.log("exhausted", this.exhausted)
+    let min = Math.max(page-5, 0)
+    let max = Math.min(page+(10 - min), Math.ceil(this.max/this.size))
+    console.log("this.max", this.max)
+    console.log("min", min)
+    console.log("max", max)
+    let bottom = "";
+    for(let i=min; i<max; i++) {
+      if (i === page) {
+        bottom += `<span class='selected page' href="${this.base}&page=${i}">${i}</span>`
+      } else {
+        bottom += `<a class='page' href="${this.base}&page=${i}">${i}</a>`
+      }
+    }
+    //this.el.insertAdjacentHTML('beforeend', "<div class='paginator'>" + bottom + "</div>")
+    if (this.el.parentNode.querySelector(".paginator")) {
+      this.el.parentNode.querySelector(".paginator").innerHTML = bottom
+    } else {
+      let paginator = document.createElement("div")
+      paginator.className = 'paginator'
+      paginator.innerHTML = bottom;
+      this.el.parentNode.appendChild(paginator)
+      this.el.parentNode.querySelector(".paginator").addEventListener("click", (e) => {
+        if (e.target.className === 'page') {
+          setTimeout(() => {
+            location.reload()
+          }, 0)
+        }
+      })
+    }
+  }
+}

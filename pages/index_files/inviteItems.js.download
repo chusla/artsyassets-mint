@@ -1,0 +1,18 @@
+const inviteItems = Handlebars.compile(`<table class='table'>
+  <tr>
+    <th>invite key</th>
+    <th>price</th>
+    <th>start</th>
+    <th>limit</th>
+    <th>mint</th>
+  </tr>
+  {{#each items}}
+    <tr>
+      <td>{{name}}</td>
+      <td>{{priceStr}}</td>
+      <td>{{startStr}}</td>
+      <td>{{limit}}</td>
+      <td><button class='mint btn' data-limit={{limit}} data-price-str="{{priceStr}}" data-price={{price}} data-cid="{{cid}}" data-key="{{key}}">Select</button></td>
+    </tr>
+  {{/each}}
+</table>`)

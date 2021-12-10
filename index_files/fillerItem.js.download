@@ -1,5 +1,0 @@
-const fillerItem = Handlebars.compile(`<div class='filler'>
-<h2>{{title}}</h2>
-<div class='message'>{{message}}</div>
-<a class='btn' href="{{link.path}}">{{link.text}}</a>
-</div>`)

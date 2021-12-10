@@ -1,0 +1,13 @@
+const params = () => {
+  let hash = location.hash
+  if (!hash) return {}
+  hash.trim();
+  if(hash[0] === "#") hash = hash.slice(1);
+  let items = hash.split("&");
+  return items.reduce((res, item) => {
+    const pair = item.split("=");
+    res[pair[0]] = pair[1];
+    return res;
+  }, {})
+}
+var Params = params()
